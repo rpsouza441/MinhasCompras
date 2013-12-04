@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<!-- 
+	<ui:composition template="template/template.xhtml">
+
+		<ui:define name="conteudo">
+	 -->
+	<h4>Cadastro de pessoas</h4>
+
+	<p>
+		<h:form id="formCad">
+
+			<h:panelGrid columns="2">
+
+				<h:outputText value="Nome" />
+				<p:inputText id="nome" value="#{pessoaBean.pessoa.nome}" />
+
+				<h:outputText value="Login" />
+				<p:inputText value="#{pessoaBean.pessoa.login}" />
+
+				<h:outputText value="Senha" />
+				<p:inputText value="#{pessoaBean.pessoa.senha}" />
+
+				<h:outputText value="Rua" />
+				<p:inputText value="#{pessoaBean.pessoa.endereco.rua}" />
+
+				<h:outputText value="Número" />
+				<p:inputText value="#{pessoaBean.pessoa.endereco.numero}" />
+
+				<h:outputText value="Bairro" />
+				<p:inputText value="#{pessoaBean.pessoa.endereco.bairro}" />
+
+				<h:outputText value="Cidade" />
+				<p:inputText value="#{pessoaBean.pessoa.endereco.cidade}" />
+
+				<h:outputText value="Referencia" />
+				<p:inputText value="#{pessoaBean.pessoa.endereco.referencia}" />
+
+			</h:panelGrid>
+
+			<p:commandButton value="Gravar" action="#{pessoaBean.createPessoa()}" />
+			<p:messages showDetail="true" showSummary="false" />
+
+
+		</h:form>
+
+	</p>
+
+	<!-- </ui:define>
+	</ui:composition>
+ -->
+</h:body>
+
+</html>

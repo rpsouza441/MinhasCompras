@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<!-- Created by Artisteer v4.1.0.59861 -->
+	<meta charset="utf-8" />
+	<title><ui:insert name="title">Home</ui:insert></title>
+	<meta name="viewport"
+		content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width" />
+
+	<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<h:outputStylesheet name="css/style.css" />
+
+	<!--[if lte IE 7]><link rel="stylesheet" href="style.ie7.css" media="screen" /><![endif]-->
+	<h:outputStylesheet name="css/style.responsive.css" />
+
+	<h:outputScript  name="js/jquery.js" target="head"  />
+	<h:outputScript  name="js/script.js" target="head"  />
+	<h:outputScript  name="js/script.responsive.js" target="head"  />
+
+
+
+
+	<style>
+.art-content .art-postcontent-0 .layout-item-0 {
+	margin-right: 10px;
+}
+
+.art-content .art-postcontent-0 .layout-item-1 {
+	border-spacing: 25px 0px;
+	border-collapse: separate;
+}
+
+.art-content .art-postcontent-0 .layout-item-2 {
+	padding: 25px;
+}
+
+.ie7 .art-post .art-layout-cell {
+	border: none !important;
+	padding: 0 !important;
+}
+
+.ie6 .art-post .art-layout-cell {
+	border: none !important;
+	padding: 0 !important;
+}
+</style>
+</h:head>
+<h:body>
+	<div id="art-main">
+		<header class="art-header">
+
+
+		<div class="art-shapes"></div>
+		<h1 class="art-headline" data-left="8.43%">
+			<a href="#">Minhas Compras</a>
+		</h1>
+
+		</header>
+
+		<div class="art-sheet clearfix">
+			<div class="art-layout-wrapper">
+				<div class="art-content-layout">
+					<div class="art-content-layout-row">
+						<div class="art-layout-cell art-sidebar1">
+
+
+							<div class="art-vmenublock clearfix">
+								<!-- Links -->
+								<ui:insert name="links">
+									<ui:include src="common/links.xhtml" />
+								</ui:insert>
+							</div>
+
+
+						</div>
+						<div class="art-layout-cell art-content">
+							<article class="art-post art-article">
+
+
+							<div class="art-postcontent art-postcontent-0 clearfix">
+								<div class="art-content-layout-wrapper layout-item-0">
+									<div class="art-content-layout layout-item-1">
+										<div class="art-content-layout-row">
+											<div class="art-layout-cell layout-item-2"
+												style="width: 100%">
+
+
+												<!-- Conteudo -->
+												<ui:insert name="conteudo">
+													<ui:include src="common/conteudo.xhtml" />
+												</ui:insert>
+
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							</article>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="art-footer"> <!-- rodape --> <ui:insert
+				name="rodape">
+				<ui:include src="common/rodape.xhtml" />
+			</ui:insert> </footer>
+
+		</div>
+	</div>
+
+
+</h:body>
+</html>

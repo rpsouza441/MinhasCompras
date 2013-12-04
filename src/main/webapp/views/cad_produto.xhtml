@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head></h:head>
+<h:body>
+	<!-- 
+	<ui:composition template="template/template.xhtml">
+
+		<ui:define name="conteudo">
+	 -->
+	<h4>Cadastro de produtos</h4>
+
+	<p>
+		<h:form id="formCad">
+			<p:messages showDetail="true" showSummary="false" />
+
+			<h:panelGrid columns="2">
+
+				<h:outputText id="labelNome" value="Nome" />
+				<p:inputText id="nome" value="#{produtoBean.produto.nome}" />
+
+				<h:outputLabel id="labelTipo" value="Tipo:"
+					for="completeProdutoTipo" />
+				<p:autoComplete id="completeProdutoTipo" value="#{produtoBean.produto.tipo}"
+					completeMethod="#{produtoBean.completeTipo}" var="tipo"
+					itemLabel="#{tipo.nome}" itemValue="#{tipo}"
+					converter="simpleEntityConverter" forceSelection="true"
+				  queryDelay="2000" minQueryLength="3" dropdown="true" />
+
+
+				<h:outputLabel id="labelFabricante" value="Fabricante:"
+					for="completeProdutoFabricante" />
+				<p:autoComplete id="completeProdutoFabricante" var="fabricante"
+					itemLabel="#{fabricante.nome}" itemValue="#{fabricante}"
+					completeMethod="#{produtoBean.completeFabricante}"
+					forceSelection="true" converter="simpleEntityConverter"
+					value="#{produtoBean.produto.fabricante}"
+					 queryDelay="2000" dropdown="true" />
+
+			</h:panelGrid>
+
+			<h:commandButton value="Gravar" action="#{produtoBean.createProduto}" />
+
+
+
+		</h:form>
+
+	</p>
+
+	<!-- </ui:define>
+	</ui:composition>
+ -->
+</h:body>
+
+</h:html>
