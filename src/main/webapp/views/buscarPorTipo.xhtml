@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head></h:head>
+<h:body>
+	<!-- 
+	<ui:composition template="template/template.xhtml">
+
+		<ui:define name="conteudo">
+	 -->
+	<h4>Categorias</h4>
+
+	<p>
+		<h:form id="formCategoria">
+			<p:dataTable var="categoria" value="#{mercadoProdutoBean.listaTipo}">
+				<p:column headerText="Nome">
+					<!-- Comando para abrir pagina da lista de produtos -->
+					<p:commandLink action="produtoEscolhido" ajax="false">
+						<h:outputText value="#{categoria.nome}" />
+						<f:setPropertyActionListener
+							target="#{mercadoProdutoBean.tipoEscolhido}" value="#{categoria}" />
+					</p:commandLink>
+				</p:column>
+
+			</p:dataTable>
+
+
+		</h:form>
+
+	</p>
+
+</h:body>
+
+</h:html>

@@ -38,7 +38,7 @@ public class Orcamento implements java.io.Serializable {
 	@JoinColumn(name = "pessoa_id")
 	private Pessoa pessoa;
 
-	@OneToMany(mappedBy = "orcamento", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "orcamento", fetch = FetchType.EAGER)
 	private Collection<ItemOrcamento> listaItemOrcamento;
 
 	public Orcamento() {

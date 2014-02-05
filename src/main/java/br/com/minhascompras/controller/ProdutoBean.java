@@ -50,6 +50,7 @@ public class ProdutoBean implements java.io.Serializable {
 		return retorno;
 	}
 
+	
 	public DAOProduto getDaoProduto() {
 		return daoProduto;
 	}
@@ -90,6 +91,21 @@ public class ProdutoBean implements java.io.Serializable {
 		listaProduto = daoProduto.list(0, 100);
 	}
 
+	public List<Produto> completeProduto(String arg) {
+		System.out.println("dentro de completeProduto");
+		loadFabricantes();
+		List<Produto> sugestoes = new ArrayList<Produto>();
+
+		for (Produto produto : listaProduto) {
+			if (produto.getNome().toLowerCase().contains(arg.toLowerCase())) {
+				sugestoes.add(produto);
+			}
+		}
+
+		return sugestoes;
+
+	}
+	
 	public List<Tipo> completeTipo(String arg) {
 		System.out.println("dentro de completeTipo");
 		loadTipos();
@@ -114,7 +130,6 @@ public class ProdutoBean implements java.io.Serializable {
 				sugestoes.add(fabricante);
 			}
 		}
-
 
 		return sugestoes;
 

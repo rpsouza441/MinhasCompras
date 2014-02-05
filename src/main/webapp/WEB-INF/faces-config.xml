@@ -43,5 +43,14 @@
     </navigation-case>
  </navigation-rule>
  
+ <navigation-rule>
+    <from-view-id>views/buscaPorTipo.xhtml</from-view-id>
+    <navigation-case>
+        <from-outcome>produtoEscolhido</from-outcome>
+        <to-view-id>views/listaProduto.xhtml</to-view-id>
+         <redirect />
+    </navigation-case>
+ </navigation-rule>
+ 
  
 </faces-config>

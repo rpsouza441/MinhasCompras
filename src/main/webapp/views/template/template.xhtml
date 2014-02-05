@@ -5,116 +5,73 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<!-- Created by Artisteer v4.1.0.59861 -->
 	<meta charset="utf-8" />
 	<title><ui:insert name="title">Home</ui:insert></title>
-	<meta name="viewport"
-		content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width" />
 
-	<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
 	<h:outputStylesheet name="css/style.css" />
+	<link
+		href='http://fonts.googleapis.com/css?family=Amaranth:400,700,400italic,700italic'
+		rel='stylesheet' type='text/css' />
+	<link
+		href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic'
+		rel='stylesheet' type='text/css' />
 
-	<!--[if lte IE 7]><link rel="stylesheet" href="style.ie7.css" media="screen" /><![endif]-->
-	<h:outputStylesheet name="css/style.responsive.css" />
+	<!--[if IE 7]>
+		<h:outputStylesheet name="css/ie7.css" />
+	<![endif]-->
+	<!--[if IE 8]>
+		<h:outputStylesheet name="css/ie8.css" /><![endif]-->
+	<!--[if IE 9]>
+		<h:outputStylesheet name="css/ie9.css" />
+	<![endif]-->
+	<h:outputScript library="primefaces" name="jquery/jquery.js" />
+	<h:outputScript name="js/ddsmoothmenu.js" target="head" />
 
-	<h:outputScript  name="js/jquery.js" target="head"  />
-	<h:outputScript  name="js/script.js" target="head"  />
-	<h:outputScript  name="js/script.responsive.js" target="head"  />
 
-
-
-
-	<style>
-.art-content .art-postcontent-0 .layout-item-0 {
-	margin-right: 10px;
-}
-
-.art-content .art-postcontent-0 .layout-item-1 {
-	border-spacing: 25px 0px;
-	border-collapse: separate;
-}
-
-.art-content .art-postcontent-0 .layout-item-2 {
-	padding: 25px;
-}
-
-.ie7 .art-post .art-layout-cell {
-	border: none !important;
-	padding: 0 !important;
-}
-
-.ie6 .art-post .art-layout-cell {
-	border: none !important;
-	padding: 0 !important;
-}
-</style>
 </h:head>
 <h:body>
-	<div id="art-main">
-		<header class="art-header">
 
-
-		<div class="art-shapes"></div>
-		<h1 class="art-headline" data-left="8.43%">
-			<a href="#">Minhas Compras</a>
-		</h1>
-
-		</header>
-
-		<div class="art-sheet clearfix">
-			<div class="art-layout-wrapper">
-				<div class="art-content-layout">
-					<div class="art-content-layout-row">
-						<div class="art-layout-cell art-sidebar1">
-
-
-							<div class="art-vmenublock clearfix">
-								<!-- Links -->
-								<ui:insert name="links">
-									<ui:include src="common/links.xhtml" />
-								</ui:insert>
-							</div>
-
-
-						</div>
-						<div class="art-layout-cell art-content">
-							<article class="art-post art-article">
-
-
-							<div class="art-postcontent art-postcontent-0 clearfix">
-								<div class="art-content-layout-wrapper layout-item-0">
-									<div class="art-content-layout layout-item-1">
-										<div class="art-content-layout-row">
-											<div class="art-layout-cell layout-item-2"
-												style="width: 100%">
-
-
-												<!-- Conteudo -->
-												<ui:insert name="conteudo">
-													<ui:include src="common/conteudo.xhtml" />
-												</ui:insert>
-
-
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-
-							</article>
-						</div>
-					</div>
-				</div>
+	<!-- Begin Wrapper -->
+	<div id="wrapper">
+		<!-- Begin Sidebar -->
+		<div id="sidebar">
+			<div id="logo">
+				<a href="index.html"><h:graphicImage library="images"
+						name="logo.png" /> </a>
 			</div>
-			<footer class="art-footer"> <!-- rodape --> <ui:insert
-				name="rodape">
-				<ui:include src="common/rodape.xhtml" />
-			</ui:insert> </footer>
+
+			<!-- Begin Menu -->
+			<div id="menu" class="menu-v">
+				<ui:insert name="links">
+					<ui:include src="common/links.xhtml" />
+				</ui:insert>
+			</div>
+			<!-- End Menu -->
+
+
 
 		</div>
+
+		<!-- End Sidebar -->
+
+		<!-- Begin Content -->
+		<div id="content">
+			<ui:insert name="conteudo">
+				<ui:include src="common/conteudo.xhtml" />
+			</ui:insert>
+
+		</div>
+		<!-- End Content -->
+
 	</div>
+	<!-- End Wrapper -->
+	<div class="clear"></div>
+	<h:outputScript name="js/scripts.js" />
 
+	<!--[if !IE]> -->
+	<h:outputScript name="js/jquery.corner.js" />
 
+	<!-- <![endif]-->
 </h:body>
 </html>

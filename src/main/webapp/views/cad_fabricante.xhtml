@@ -7,39 +7,52 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:body>
-	<!-- 
+
 	<ui:composition template="template/template.xhtml">
 
 		<ui:define name="conteudo">
-	 -->
-	<h4>Cadastro do fabricantes</h4>
 
-	<p>
-		<h:form id="formCad">
+			<h1 class="title">Cadastro de Fabricante</h1>
+			<div class="line"></div>
+			<div class="intro">Preencha os campos abaixo</div>
 
-			<h:panelGrid columns="2">
+			<!-- Begin Post -->
+			<div class="post">
+				<p>
 
-				<h:outputText value="Nome" />
-				<p:inputText id="nome" value="#{fabricanteBean.fabricante.nome}" />
-				
-				<h:outputText value="Nivel Confianca" />
-				<p:inputText id="nivelConfianca" value="#{fabricanteBean.fabricante.nivelConfianca}" />
+					<h:form id="formCad">
+<p:focus context="formCad"/>  
+						<h:panelGrid columns="2">
 
-			
-			</h:panelGrid>
-
-			<p:commandButton value="Gravar"
-				action="#{fabricanteBean.createFabricante()}" />
-			<p:messages showDetail="true" showSummary="false" />
+							<h:outputText value="Nome" />
+							<p:inputText id="nome" value="#{fabricanteBean.fabricante.nome}"
+								label="labelNome" size="40" />
 
 
-		</h:form>
 
-	</p>
+							<h:outputText value="Nivel Confianca" />
+							<p:rating id="nivelConfianca"
+								value="#{fabricanteBean.fabricante.nivelConfianca}" />
 
-	<!-- </ui:define>
+
+
+						</h:panelGrid>
+
+						<p:watermark for="nome" value="Digite o nome da Fabricante" />
+						<p:commandButton value="Gravar"
+							action="#{fabricanteBean.createFabricante()}" update="formCad" />
+
+
+						<p:messages showDetail="true" showSummary="false" />
+					</h:form>
+
+				</p>
+			</div>
+			<!-- End Post -->
+
+		</ui:define>
 	</ui:composition>
- -->
+
 </h:body>
 
 </html>
